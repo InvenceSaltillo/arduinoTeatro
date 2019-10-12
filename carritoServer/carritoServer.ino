@@ -8,6 +8,7 @@ int val;
 WiFiServer server(80);
 
 void setup() {
+
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);

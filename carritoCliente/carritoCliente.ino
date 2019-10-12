@@ -42,7 +42,7 @@ int pausa = 100;
 void setup() {
 
   pinMode(pulsador, INPUT_PULLUP);
-  
+
   Serial.begin(115200);
   delay(10);
   Serial.print("Conectando a ");
@@ -69,12 +69,11 @@ void loop() {
 
       if ( val == "1") {
         val = "0";
-        enviarPeticion();
       } else {
         val = "1";
-        enviarPeticion();
       }
 
+      enviarPeticion();
       Serial.println(val);
 
     }
