@@ -1,10 +1,14 @@
-int pinLedR = 9;  // pin Rojo del led RGB
-int pinLedV = 10;  // pin Verde del led RGB
-int pinLedA = 11;   // pin Azul del led RGB
+int pinLedR = 3;  // pin Rojo del led RGB
+int pinLedV = 5;  // pin Verde del led RGB
 
+int pinLedR2 = 6;  // pin Rojo del led RGB
+int pinLedV2 = 9;  // pin Verde del led RGB
+
+int pinLedR3 = 10;  // pin Rojo del led RGB
+int pinLedV3 = 11;  // pin Verde del led RGB
 
 const int pulsadorON = 4; // Entrada digital para el pulsador
-const int pulsadorOFF = 5; // Entrada digital para el pulsador
+
 const int tiempoAntirrebote = 10; // tiempo en ms para evitar el rebote
 
 int estadoBoton;
@@ -38,22 +42,26 @@ void setup() {
 
   pinMode(pulsadorON, INPUT_PULLUP); // PIN digital del pulsador como entrada
   pinMode(pinLedR, OUTPUT);    // pone el pinLedR como output
-  pinMode(pinLedV, OUTPUT);    // pone el pinLedV como output
-  pinMode(pinLedA, OUTPUT);    // pone el pinLedA como output
+  pinMode(pinLedV, OUTPUT);    // pone el pinLedA como output
 
-  //  color(255, 255, 255);
+  color1(255, 255, 255);
+  color2(255, 255, 255);
+  color3(255, 255, 255);
+  delay(2000);
 }
 
 void loop() {
 
-  color(200, 5, 0);
-
-  estadoBoton = digitalRead(pulsadorON);
-
+//  estadoBoton = digitalRead(pulsadorON);
+//
 //  if (estadoBoton != estadoBotonAnterior) {
 //    if (antirrebote(pulsadorON)) {
-//
-//      color(0, 255, 255);   // vela encendida
+
+      color1(0, 220, 0);
+      color2(0, 220, 0);
+      color3(0, 255, 0);
+
+//      Serial.println("Boton");
 //    }
 //  }
 //  estadoBotonAnterior = estadoBoton;
@@ -62,8 +70,19 @@ void loop() {
 }
 
 // funcion para generar colores
-void color (int rojo, int verde, int azul) {
+void color1 (int rojo, int verde, int azul) {
   analogWrite(pinLedR, rojo);
   analogWrite(pinLedV, verde);
-  analogWrite(pinLedA, azul);
+}
+
+// funcion para generar colores
+void color2 (int rojo, int verde, int azul) {
+  analogWrite(pinLedR2, rojo);
+  analogWrite(pinLedV2, verde);
+}
+
+// funcion para generar colores
+void color3 (int rojo, int verde, int azul) {
+  analogWrite(pinLedR3, rojo);
+  analogWrite(pinLedV3, verde);
 }

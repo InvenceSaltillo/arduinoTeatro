@@ -6,12 +6,11 @@ const char* ssid     = "carritoServer";
 const char* password = "";
 const char* host = "http://192.168.4.1";
 String val = "1";
-int analog;
 
 HTTPClient http;
 
 
-const int pulsador = 4; // Entrada digital para el pulsador
+const int pulsador = 4; // D2
 const int tiempoAntirrebote = 10; // tiempo en ms para evitar el rebote
 
 int estadoBoton;
